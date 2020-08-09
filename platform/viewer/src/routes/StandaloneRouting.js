@@ -63,6 +63,7 @@ class StandaloneRouting extends Component {
         log.info(JSON.stringify(oReq.responseText, null, 2));
 
         const data = JSON.parse(oReq.responseText);
+         console.log("Server..........", data)
         if (data.servers) {
           if (!query.studyInstanceUIDs) {
             log.warn('No study instance uids specified');
@@ -71,6 +72,7 @@ class StandaloneRouting extends Component {
 
           const server = data.servers.dicomWeb[0];
           server.type = 'dicomWeb';
+         
 
           log.warn('Activating server', server);
           this.props.activateServer(server);
@@ -132,6 +134,7 @@ class StandaloneRouting extends Component {
       // Remove ? prefix which is included for some reason
       search = search.slice(1, search.length);
       const query = qs.parse(search);
+      console.log("Standlone...........", this.props.location, search, query)
 
       let {
         server,

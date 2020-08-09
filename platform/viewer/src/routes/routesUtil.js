@@ -12,6 +12,9 @@ const IHEInvokeImageDisplay = asyncComponent(() =>
 const ViewerRouting = asyncComponent(() =>
   import(/* webpackChunkName: "ViewerRouting" */ './ViewerRouting.js')
 );
+const Dashboard = asyncComponent(() =>
+  import(/* webpackChunkName: "ViewerRouting" */ './Dashboard.js')
+);
 
 const StudyListRouting = asyncComponent(() =>
   import(
@@ -42,7 +45,7 @@ const ROUTES_DEF = {
       component: StandaloneRouting,
     },
     list: {
-      path: ['/studylist', '/'],
+      path: '/studylist',
       component: StudyListRouting,
       condition: appConfig => {
         return appConfig.showStudyList;
@@ -55,7 +58,12 @@ const ROUTES_DEF = {
     IHEInvokeImageDisplay: {
       path: '/IHEInvokeImageDisplay',
       component: IHEInvokeImageDisplay
-    },
+    }
+    ,
+    Dashboard: {
+      path: ['/dashboard', '/'],
+      component: Dashboard
+    }
   },
   gcloud: {
     viewer: {

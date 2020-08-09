@@ -75,10 +75,10 @@ function Header(props) {
               {t('Back to Viewer')}
             </Link>
           )}
+       
+        {children}
 
-          {children}
-
-          {hasLink && (
+          {/* {hasLink && (
             <Link
               className="header-btn header-studyListLinkSection"
               to={{
@@ -88,11 +88,11 @@ function Header(props) {
             >
               {t(linkText)}
             </Link>
-          )}
+          )} */}
         </div>
 
         <div className="header-menu">
-          <span className="research-use">{t('INVESTIGATIONAL USE ONLY')}</span>
+         
           <Dropdown title={t('Options')} list={options} align="right" />
         </div>
       </div>

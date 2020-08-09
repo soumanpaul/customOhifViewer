@@ -76,7 +76,7 @@ class OHIFCornerstoneViewport extends Component {
     const displaySet = study.displaySets.find(set => {
       return set.displaySetInstanceUID === displaySetInstanceUID;
     });
-
+   console.log("OHIF Vieport....................study,study.displaySets, displaySet", study,study.displaySets, displaySet)
     if (!displaySet) {
       throw new Error('Display Set not found.');
     }

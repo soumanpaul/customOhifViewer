@@ -8,6 +8,9 @@
   display: inline-block;
   position: relative;
 }
+.app-title{
+  color:#66ccff;
+}
 
 .header-brand {
   text-decoration: none;

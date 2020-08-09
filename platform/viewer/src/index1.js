@@ -4,10 +4,17 @@
  */
 
 import 'regenerator-runtime/runtime';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App.js';
+import './theme-tide.css'
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  Switch,
+  Route,
+  BrowserRouter as Router,
+  useRouteMatch,
+} from "react-router-dom";
 // test
 
 /**
@@ -53,8 +60,10 @@ const appProps = {
   ],
 };
 
-/** Create App */
-const app = React.createElement(App, appProps, null);
+const app = React.createElement(App,appProps, null);
+
+
+
 
 /** Render */
 ReactDOM.render(app, document.getElementById('root'));
